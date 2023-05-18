@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="styleReg.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+</head>
+
+<body>
+    <h2>Modulo di Registrazione</h2>
+    <form action ="connectDB.php" name="myForm" onsubmit="return validateForm()" method="post">
+        <div class="formdesign" id="name">
+            Nome: <input type="text" name="fname" required><b><span class="formerror"> </span></b>
+        </div>
+
+        <div class="formdesign" id="cognome">
+            Cognome: <input type="text" name="fcognome" required><b><span class="formerror"> </span></b>
+        </div>
+
+        <div class="formdesign" id="email">
+            Email: <input type="email" name="femail" required><b><span class="formerror"> </span></b>
+        </div>
+
+        <div class="formdesign" id="phone">
+            Telefono: <input type="phone" name="fphone" required><b><span class="formerror"></span></b>
+        </div>
+
+        <div class="formdesign" id="cf">
+            Codice Fiscale: <input type="text" name="fcf" required><b><span class="formerror"></span></b>
+        </div>
+
+        <div class="formdesign" id="pass">
+            Password: <input type="password" name="fpass" required><b><span class="formerror"></span></b>
+        </div>
+
+        <div class="formdesign" id="cpass">
+            Conferma Password: <input type="password" name="fcpass" required><b><span class="formerror"></span></b>
+        </div>
+
+        <div class="formdesign" id="certificato">
+            Hai il certificato medico? 
+                <select name="fcertificato">
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
+                </select>
+        </div>
+
+        <input class="but" id ="invia" type="submit" value="INVIA" onclick="window.location.href = 'index.html';">
+        </form>
+        
+<!-- 
+    fare che dopo aver  completato correttamente la registrazione esce ti rimanda alla pagina iniziale e 
+    appare in alto a destra solo il pulsante per effettuare il logout; fare una pagina che gestisca il logout 
+    usando i cookie o le sessioni
+-->      
+    
+           
+<script src="index.js"></script>
+</body>
+
+
+</html>

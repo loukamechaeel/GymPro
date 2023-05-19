@@ -5,62 +5,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register Form</title>
-    <link rel="stylesheet" href="styleReg.css">
+    <title>Modulo Registrazione</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
-</head>
-
-<body>
-    <h2>Modulo di Registrazione</h2>
-    <form action ="connectDB.php" name="myForm" onsubmit="return validateForm()" method="post">
-        <div class="formdesign" id="name">
-            Nome: <input type="text" name="fname" required><b><span class="formerror"> </span></b>
-        </div>
-
-        <div class="formdesign" id="cognome">
-            Cognome: <input type="text" name="fcognome" required><b><span class="formerror"> </span></b>
-        </div>
-
-        <div class="formdesign" id="email">
-            Email: <input type="email" name="femail" required><b><span class="formerror"> </span></b>
-        </div>
-
-        <div class="formdesign" id="phone">
-            Telefono: <input type="phone" name="fphone" required><b><span class="formerror"></span></b>
-        </div>
-
-        <div class="formdesign" id="cf">
-            Codice Fiscale: <input type="text" name="fcf" required><b><span class="formerror"></span></b>
-        </div>
-
-        <div class="formdesign" id="pass">
-            Password: <input type="password" name="fpass" required><b><span class="formerror"></span></b>
-        </div>
-
-        <div class="formdesign" id="cpass">
-            Conferma Password: <input type="password" name="fcpass" required><b><span class="formerror"></span></b>
-        </div>
-
-        <div class="formdesign" id="certificato">
-            Hai il certificato medico? 
-                <select name="fcertificato">
-                    <option value='SI'>SI</option>
-                    <option value='NO'>NO</option>
-                </select>
-        </div>
-
-        <input class="but" id ="invia" type="submit" value="INVIA" onclick="window.location.href = 'index.html';">
-        </form>
-        
-<!-- 
-    fare che dopo aver  completato correttamente la registrazione esce ti rimanda alla pagina iniziale e 
-    appare in alto a destra solo il pulsante per effettuare il logout; fare una pagina che gestisca il logout 
-    usando i cookie o le sessioni
--->      
     
-           
-<script src="index.js"></script>
-</body>
+<!-- style per mettere le 2 foto a destra del modulo e lo sfondo colorato -->  
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
 
+        .left {
+            width: 80%;
+        }
 
+        .right {
+            width: 150%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .image {
+            text-align: center;
+        }
+        
+        body {
+          background-color: rgb(7, 212, 248);
+        }
+    </style>
+        
+</head>
+<body>
+    <h2><mark style="background-color: yellow;">Modulo di Registrazione</mark></h2>
+
+    <div class="container">
+        <div class="left">
+            <form action="connectDB.php" name="myForm" onsubmit="return validateForm()" method="post">
+                <div class="formdesign" id="name">
+                    <p style="color: rgb(0,0,0);">Nome</p> <input type="text" name="fname" required><b><span class="formerror"> </span></b>
+                </div>
+
+                <div class="formdesign" id="cognome">
+                    <p style="color: rgb(0,0,0);">Cognome</p> <input type="text" name="fcognome" required><b><span class="formerror"> </span></b>
+                </div>
+
+                <div class="formdesign" id="email">
+                    <p style="color: rgb(0,0,0);">Email</p> <input type="email" name="femail" required><b><span class="formerror"> </span></b>
+                </div>
+
+                <div class="formdesign" id="phone">
+                    <p style="color: rgb(0,0,0);">Telefono</p> <input type="phone" name="fphone" required><b><span class="formerror"></span></b>
+                </div>
+
+                <div class="formdesign" id="cf">
+                    <p style="color: rgb(0,0,0);">Codice Fiscale</p> <input type="text" name="fcf" required><b><span class="formerror"></span></b>
+                </div>
+
+                <div class="formdesign" id="pass">
+                    <p style="color: rgb(0,0,0);">Password</p> <input type="password" name="fpass" required><b><span class="formerror"></span></b>
+                </div>
+
+                <div class="formdesign" id="cpass">
+                    <p style="color: rgb(0,0,0);">Conferma Password</p> <input type="password" name="fcpass" required><b><span class="formerror"></span></b>
+                </div>
+
+                <div class="formdesign" id="certificato">
+                    <p style="color: rgb(0,0,0);">Hai il certificato medico?</p> 
+                    <select name="fcertificato">
+                        <option value='SI'>SI</option>
+                        <option value='NO'>NO</option>
+                    </select>
+                </div>
+
+                <input class="but" id="invia" type="submit" value="INVIA" onclick="window.location.href = 'index.html';">
+            </form>
+        </div>
+
+        <div class="right">
+            <div class="image">
+                <img src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Foto 1" height="200">
+            </div>
+
+            <div class="image">
+                <img src="https://images.pexels.com/photos/5327476/pexels-photo-5327476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Foto 2" height="200"> 
+            </div>
+        </body>
 </html>
